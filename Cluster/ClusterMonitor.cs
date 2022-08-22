@@ -11,6 +11,6 @@ namespace Cluster
 			_client = client;
 		}
 
-		public event EventHandler<ClusterStateChanged> ClusterIsSplitted;
+		public event EventHandler<ClusterStateChanged> ClusterStateChanged;
 	}
 }
