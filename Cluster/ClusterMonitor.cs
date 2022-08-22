@@ -1,4 +1,6 @@
-﻿namespace Cluster
+﻿using System;
+
+namespace Cluster
 {
 	public class ClusterMonitor
 	{
@@ -8,5 +10,7 @@
 		{
 			_client = client;
 		}
+
+		public event EventHandler<ClusterStateChanged> ClusterIsSplitted;
 	}
 }
