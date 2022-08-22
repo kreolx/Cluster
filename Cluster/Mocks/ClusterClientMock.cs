@@ -36,6 +36,7 @@ namespace Cluster.Mocks
 
 			var result = _states.Keys
 				.Select(id => new NodeDto { Id = id })
+				.OrderBy(n => n.Id)
 				.ToArray();
 
 			return Task.FromResult<IReadOnlyCollection<NodeDto>>(result);
@@ -70,6 +71,7 @@ namespace Cluster.Mocks
 				.Union(inbound)
 				.Where(id => id != nodeId)
 				.Select(id => new NodeDto { Id = id })
+				.OrderBy(n => n.Id)
 				.ToArray();
 
 			return Task.FromResult<IReadOnlyCollection<NodeDto>>(result);
