@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Cluster.Mocks;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Cluster.Mocks;
 
 namespace Cluster
 {
@@ -36,9 +35,9 @@ namespace Cluster
 			});
 		}
 
-		private static Task<bool> IsSplittedAsync(IClusterClient client, CancellationToken cancellationToken)
+		private static async Task<bool> IsSplittedAsync(IClusterClient client, CancellationToken cancellationToken)
 		{
-			throw new NotImplementedException();
+			return await ClusterCheckManager.CheckClusterStateAsync(client, cancellationToken);
 		}
 	}
 }
